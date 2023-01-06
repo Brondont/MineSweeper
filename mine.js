@@ -62,6 +62,8 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
         if (mineslocation.includes(tile.id)) {
+            if(this.innerHTML == "🚩")
+                return;
             document.querySelector("#gamestatus").innerHTML = "😵";
             tile.style.backgroundColor = 'red';
             revealMines();
@@ -122,16 +124,15 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
     function mines() {
-        mineslocation.push("0-0");
-        mineslocation.push("0-1");
-        mineslocation.push("0-2");
-        mineslocation.push("1-0");
-        mineslocation.push("2-0");
-        mineslocation.push("2-1");
-        mineslocation.push("2-2");
-        mineslocation.push("3-2");
-        mineslocation.push("6-2");
-        mineslocation.push("5-2");
-        mineslocation.push("1-2");
+        let mines = mineCount;
+        while(mines>0)
+        {
+            let r = Math.floor(Math.random() * BOARDSIZE);
+            let c = Math.floor(Math.random() * BOARDSIZE);
+            let id = r.toString()+ '-' + c.toString()
+            if(!mineslocation.includes(id))
+                mineslocation.push(id);
+            mines--;
+        }
     }
 });
