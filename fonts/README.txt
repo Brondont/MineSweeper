@@ -1,0 +1,1 @@
+This font is sourced from:https://fontstruct.com/fontstructions/show/1501665/mine-sweeper

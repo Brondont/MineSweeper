@@ -1,3 +1,8 @@
+@font-face {
+    font-family: minesweeper;
+    src: url(fonts/mine-sweeper.ttf);
+}
+
 .main {
     text-align: center;
     margin: 20px;
@@ -68,7 +73,7 @@ h6 {
 }
 
 .Gameboard div {
-    font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+    font-family: 'minesweeper', sans-serif;
     cursor: pointer;
     width: 60px;
     height: 60px;
@@ -81,7 +86,12 @@ h6 {
 }
 
 .tclicked {
-    background: darkgray;
+    background: #BDBDBD;
+    border: 3px solid #7F7F7F;
+}
+
+.x0 {
+    display:none;
 }
 
 .x1 {
