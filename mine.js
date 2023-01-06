@@ -1,7 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
     var board = [];
     const BOARDSIZE = 8;
-    var mineCount = 9;
+    const mineCount = 9;
+    var tempmineCount = mineCount;
     var mineslocation = [];
     var tilesClicked = 0;
     var flag = false;
@@ -13,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
     mines();
     function startGame() {
         //set mine count
-        document.querySelector(".mines-count").innerHTML = '00' + mineCount.toString();
+        document.querySelector(".mines-count").innerHTML = '00' + tempmineCount.toString();
         document.querySelector("#flag").addEventListener('click', flagclicked);
         //populate columns
         for (let r = 0; r < BOARDSIZE; r++) {
@@ -45,25 +46,25 @@ document.addEventListener('DOMContentLoaded', function () {
         if (flag) {
             if (tile.innerHTML == "") {
                 tile.innerHTML = "🚩";
-                mineCount--;
-                if (mineCount >= 0)
-                    document.querySelector(".mines-count").innerHTML = '00' + mineCount.toString();
+                tempmineCount--;
+                if (tempmineCount >= 0)
+                    document.querySelector(".mines-count").innerHTML = '00' + tempmineCount.toString();
                 else
-                    document.querySelector(".mines-count").innerHTML = '-00' + (-1 * mineCount).toString();
+                    document.querySelector(".mines-count").innerHTML = '-00' + (-1 * tempmineCount).toString();
             }
             else if (tile.innerHTML == "🚩") {
                 tile.innerHTML = "";
-                mineCount++;
-                if (mineCount >= 0)
-                    document.querySelector(".mines-count").innerHTML = '00' + mineCount.toString();
+                tempmineCount++;
+                if (tempmineCount >= 0)
+                    document.querySelector(".mines-count").innerHTML = '00' + tempmineCount.toString();
                 else
-                    document.querySelector(".mines-count").innerHTML = '-00' + (-1 * mineCount).toString();
+                    document.querySelector(".mines-count").innerHTML = '-00' + (-1 * tempmineCount).toString();
             }
             return;
         }
+        if (tile.innerHTML == "🚩")
+            return;
         if (mineslocation.includes(tile.id)) {
-            if(this.innerHTML == "🚩")
-                return;
             document.querySelector("#gamestatus").innerHTML = "😵";
             tile.style.backgroundColor = 'red';
             revealMines();
@@ -75,6 +76,12 @@ document.addEventListener('DOMContentLoaded', function () {
         let r = parseInt(coords[0]);
         let c = parseInt(coords[1]);
         checkTile(r, c);
+        console.log(tilesClicked);
+        if (tilesClicked == ((BOARDSIZE * BOARDSIZE) - mineCount)) {
+            gamestatus = true;
+            console.log('win!');
+            document.querySelector("#gamestatus").innerHTML = "😎"
+        }
     }
     function checkTile(r, c) {
         let Smines = 0;
@@ -107,10 +114,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             }
         }
-        if (tilesClicked == (BOARDSIZE * BOARDSIZE) - mineCount) {
-            gamestatus = true;
-            document.querySelector("#gamestatus").innerHTML = "😎"
-        }
     }
     function revealMines() {
         for (let i = 0; i < BOARDSIZE; i++) {
@@ -125,14 +128,14 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     function mines() {
         let mines = mineCount;
-        while(mines>0)
-        {
+        while (mines > 0) {
             let r = Math.floor(Math.random() * BOARDSIZE);
             let c = Math.floor(Math.random() * BOARDSIZE);
-            let id = r.toString()+ '-' + c.toString()
-            if(!mineslocation.includes(id))
+            let id = r.toString() + '-' + c.toString()
+            if (!mineslocation.includes(id)) {
                 mineslocation.push(id);
-            mines--;
+                mines--;
+            }
         }
     }
 });
