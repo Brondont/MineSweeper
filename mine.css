@@ -1,0 +1,126 @@
+.main {
+    text-align: center;
+    margin: 20px;
+}
+
+h1 {
+    color: white;
+    text-shadow: 2px 2px #000;
+}
+
+h5,
+h6 {
+    color: white;
+    margin-top: 30px;
+}
+
+.text {
+    border: 10px outset white;
+    width: fit-content;
+    margin: auto;
+    background-color: lightgrey;
+}
+
+.mines-count {
+    color: red;
+    background-color: black;
+    border: 2px inset white;
+    margin: auto;
+    font-size: 30pt;
+    width: fit-content;
+    font-family: 'Digital Numbers', sans-serif;
+}
+
+.timer {
+    color: red;
+    background-color: black;
+    border: 2px inset white;
+    margin: auto;
+    font-size: 30pt;
+    width: fit-content;
+    font-family: 'Digital Numbers', sans-serif;
+}
+
+.gamestatus {
+    border: 3px outset white;
+    width: 30px;
+}
+
+.gametape {
+    width: 500px;
+    height: 100px;
+    margin: auto;
+    border: 10px inset white;
+    background-color: lightgrey;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+}
+
+.Gameboard {
+    width: 500px;
+    height: 500px;
+    background-color: lightgray;
+    border: 10px inset white;
+
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.Gameboard div {
+    font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
+    border-style: outset;
+    border-width: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tclicked {
+    background: darkgray;
+}
+
+.x1 {
+    color: blue;
+}
+
+.x2 {
+    color: green;
+}
+
+.x3 {
+    color: red;
+}
+
+.x4 {
+    color: navy;
+}
+
+.x5 {
+    color: brown;
+}
+
+.x6 {
+    color: teal;
+}
+
+.x7 {
+    color: black;
+}
+
+.x8 {
+    color: gray;
+}
+
+#flag {
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+    font-size: 30px;
+    background-color: lightgray;
+    border: 5px outset white;
+}
