@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var tilesClicked = 0;
     var flag = false;
     var gamestatus = false;
-
+    var countup = 0;
 
 
     startGame();
@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
         //set mine count
         document.querySelector(".mines-count").innerHTML = '00' + tempmineCount.toString();
         document.querySelector("#flag").addEventListener('click', flagclicked);
+        setInterval(timer, 1000);
         //populate columns
         for (let r = 0; r < BOARDSIZE; r++) {
             let row = [];
@@ -28,6 +29,16 @@ document.addEventListener('DOMContentLoaded', function () {
             }
             board.push(row);
         }
+    }
+    function timer() {
+        countup++;
+        if (countup < 10)
+            document.querySelector(".timer").innerHTML = "00" + countup.toString()
+        else if (countup < 100)
+            document.querySelector(".timer").innerHTML = "0" + countup.toString()
+        else
+        document.querySelector(".timer").innerHTML = countup.toString()
+
     }
     function flagclicked() {
         if (flag) {
