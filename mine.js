@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
         //set mine count
         document.querySelector(".mines-count").innerHTML = '00' + tempmineCount.toString();
         document.querySelector("#flag").addEventListener('click', flagclicked);
-        setInterval(timer, 1000);
+            setInterval(timer, 1000);
         //populate columns
         for (let r = 0; r < BOARDSIZE; r++) {
             let row = [];
@@ -31,13 +31,15 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
     function timer() {
+        if(gamestatus)
+            return;
         countup++;
         if (countup < 10)
             document.querySelector(".timer").innerHTML = "00" + countup.toString()
         else if (countup < 100)
             document.querySelector(".timer").innerHTML = "0" + countup.toString()
         else
-        document.querySelector(".timer").innerHTML = countup.toString()
+            document.querySelector(".timer").innerHTML = countup.toString()
 
     }
     function flagclicked() {
