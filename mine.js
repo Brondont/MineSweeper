@@ -112,13 +112,13 @@ document.addEventListener('DOMContentLoaded', function () {
         if (Smines > 0) {
             board[r][c].innerHTML = Smines
             board[r][c].setAttribute('class', 'tclicked x' + (Smines).toString());
-            board[r][c].setAttribute('style', 'border: 3px solid #7F7F7F;')
+            board[r][c].setAttribute('style', 'border: 3px solid #7F7F7F;width:57px;height:57.8px;')
         } else {
 
             if (board[r][c].classList.contains('tclicked'))
                 return;
             board[r][c].setAttribute('class', 'tclicked')
-            board[r][c].setAttribute('style', 'border: 3px solid #7F7F7F;')
+            board[r][c].setAttribute('style', 'border: 3px solid #7F7F7F;width:57px;height:57.8px;')
             for (let i = -1; i <= 1; i++) {
                 for (let j = -1; j <= 1; j++) {
                     if (r + i >= 0 && r + i < BOARDSIZE && c + j >= 0 && c + j < BOARDSIZE) {
@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', function () {
         for (let i = 0; i < BOARDSIZE; i++) {
             for (let j = 0; j < BOARDSIZE; j++) {
                 if (mineslocation.includes(board[i][j].id)) {
-                    board[i][j].setAttribute('style', 'border: 3px solid gray')
+                    board[i][j].setAttribute('style', 'border: 3px solid #7F7F7F;width:57px;height:57.8px;')
                     board[i][j].style.backgroundColor = "red";
                     board[i][j].innerHTML = "💣";
                 }

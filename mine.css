@@ -2,7 +2,9 @@
     font-family: minesweeper;
     src: url(fonts/mine-sweeper.ttf);
 }
-
+.mainBody{
+    background-image: url(image/yes.jpg)
+}
 .main {
     text-align: center;
     margin: 20px;
@@ -16,7 +18,8 @@ h1 {
 h5,
 h6 {
     color: white;
-    margin-top: 30px;
+    margin-top: 15px;
+    margin-bottom:5px;
 }
 
 .text {
@@ -31,8 +34,12 @@ h6 {
     background-color: black;
     border: 2px inset white;
     margin: auto;
-    font-size: 30pt;
+    font-size: 40pt;
     width: fit-content;
+    height:70px;
+    display:flex;
+    align-items:center;
+    justify-content: center;
     font-family: 'Digital Numbers', sans-serif;
 }
 
@@ -41,14 +48,17 @@ h6 {
     background-color: black;
     border: 2px inset white;
     margin: auto;
-    font-size: 30pt;
+    font-size: 40pt;
     width: fit-content;
+    height:70px;
+    display:flex;
+    align-items:center;
+    justify-content: center;
     font-family: 'Digital Numbers', sans-serif;
 }
 
-.gamestatus {
-    border: 3px outset white;
-    width: 30px;
+#gamestatus {
+    font-size:20pt;
 }
 
 .gametape {
@@ -75,8 +85,8 @@ h6 {
 .Gameboard div {
     font-family: 'minesweeper', sans-serif;
     cursor: pointer;
-    width: 60px;
-    height: 60px;
+    width: 52.8px;
+    height: 52.8px;
     font-size: 30px;
     border-style: outset;
     border-width: 5px;
