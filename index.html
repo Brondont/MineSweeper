@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="index.css" rel="stylesheet" />
+    <link
+      href="https://fonts.cdnfonts.com/css/digital-numbers"
+      rel="stylesheet"
+    />
+    <script src="index.js"></script>
+    <title>Mine Sweeper</title>
+  </head>
+
+  <body>
+    <div class="main">
+      <select>
+        <option value="-">-</option>
+        <option value="easy">easy</option>
+        <option value="intermediate">intermediate</option>
+        <option value="hard">hard</option>
+      </select>
+      <div class="board">
+        <div class="gameTape">
+          <div class="minesCount">
+            <span class="count">0-0</span>
+            <span class="style">888</span>
+          </div>
+          <button class="reset">🙂</button>
+          <div class="timer">
+            <span class="time">000</span>
+            <span class="style">888</span>
+          </div>
+        </div>
+        <div class="minesField"></div>
+      </div>
+    </div>
+  </body>
+</html>

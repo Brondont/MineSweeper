@@ -1,0 +1,143 @@
+@font-face {
+  font-family: minesweeper;
+  src: url(fonts/mine-sweeper.ttf);
+}
+
+@import url("https://fonts.cdnfonts.com/css/digital-numbers");
+
+body,
+html {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  user-select: none;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url(image/yes.jpg);
+}
+
+.board {
+  border: 5px outset white;
+  padding: 8px;
+  width: fit-content;
+  margin: auto;
+  background-color: lightgrey;
+}
+
+.gameTape {
+  width: auto;
+  height: 50px;
+  margin: auto;
+  border: 4px inset white;
+  padding: 8px;
+  background-color: lightgrey;
+  display: flex;
+  justify-content: space-between;
+}
+
+.timer,
+.minesCount,
+style {
+  color: red;
+  background-color: black;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Digital Numbers", "Times New Roman", Times, serif;
+}
+
+.style {
+  position: absolute;
+  opacity: 0.2;
+}
+
+.reset {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  background-color: lightgray;
+  border: 4px outset white;
+}
+
+.resetClicked {
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  background: #bdbdbd;
+  border: 2px inset white;
+}
+
+#gamestatus {
+  font-size: 20pt;
+}
+
+.minesField {
+  display: grid;
+  background-color: lightgray;
+  border: 7px inset white;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.t,
+.tclicked {
+  font-family: "minesweeper", sans-serif;
+  text-align: center;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  border-style: outset;
+  border-width: 4px;
+}
+
+.tclicked {
+  background: #bdbdbd;
+  border: 2px solid grey;
+  width: 24.8px;
+  height: 24.8px;
+}
+
+.x0 {
+  color: transparent;
+}
+
+.x1 {
+  color: blue;
+}
+
+.x2 {
+  color: green;
+}
+
+.x3 {
+  color: red;
+}
+
+.x4 {
+  color: navy;
+}
+
+.x5 {
+  color: brown;
+}
+
+.x6 {
+  color: teal;
+}
+
+.x7 {
+  color: black;
+}
+
+.x8 {
+  color: gray;
+}
